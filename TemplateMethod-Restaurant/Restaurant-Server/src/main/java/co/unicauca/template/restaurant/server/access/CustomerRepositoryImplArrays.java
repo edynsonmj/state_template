@@ -25,6 +25,7 @@ public final class CustomerRepositoryImplArrays implements ICustomerRepository {
     @Override
     public String adicionarPlato(Plato p) {
         platos.add(p);
+        System.out.println("plato recibido: "+p.getNombre());
         return ""+platos.size();
     }
 

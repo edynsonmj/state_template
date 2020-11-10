@@ -1,12 +1,13 @@
 package co.unicauca.template.restaurant.cliente.infra;
 
 
+
+import co.unicauca.resturant.commons.infra.Utilities;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.text.Utilities;
 
 /**
  * Representa el Socket de la aplicación cliente. Su función es enviar una
@@ -27,11 +28,11 @@ public class RestauranteSocket {
     /**
      * Ip del Server Socket, es obtenida del archivo propertis
      */
-   // private final String IP_SERVER = Utilities.loadProperty("server.ip");
+    private final String IP_SERVER = Utilities.loadProperty("server.ip");
     /**
      * Puerto del server socket
      */
-    //private final int PORT = Integer.parseInt(Utilities.loadProperty("server.port"));
+    private final int PORT = Integer.parseInt(Utilities.loadProperty("server.port"));
 
     /**
      * Envia una solicitud desde la aplicación cliente al servidor mediate el
@@ -82,7 +83,7 @@ public class RestauranteSocket {
      * @throws IOException error de entrada y salida
      */
     public void connect() throws IOException {
-//        socket = new java.net.Socket(IP_SERVER, PORT);
+        socket = new java.net.Socket(IP_SERVER, PORT);
         Logger.getLogger("SocketClient").log(Level.INFO, "Socket establecido");
     }
 
