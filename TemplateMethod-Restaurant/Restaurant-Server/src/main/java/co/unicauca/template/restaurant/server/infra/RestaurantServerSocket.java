@@ -103,6 +103,11 @@ public class RestaurantServerSocket extends ServerSocketTemplate {
 
     private void processPostPlato(Protocol protocolRequest) {
         Plato p = new Plato();
+        p.setId(Integer.parseInt(protocolRequest.getParameters().get(0).getValue()));
+        p.setNombre(protocolRequest.getParameters().get(1).getValue());
+        p.setDescripcion(protocolRequest.getParameters().get(2).getValue());
+        String response = this.getService().createPlato(p);
+        this.respond(response);
     }
    
 }

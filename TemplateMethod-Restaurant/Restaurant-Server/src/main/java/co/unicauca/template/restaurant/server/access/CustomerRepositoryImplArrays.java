@@ -14,22 +14,18 @@ public final class CustomerRepositoryImplArrays implements ICustomerRepository {
     /**
      * Array List de clientes
      */
-    private static List<Plato> customers;
+    private static List<Plato> platos;
 
     public CustomerRepositoryImplArrays() {
-        if (customers == null){
-            customers = new ArrayList();
-        }
-        
-        if (customers.size() == 0){
-            inicializar();
+        if (platos == null){
+            platos = new ArrayList();
         }
     }
 
-    public void inicializar() {
-
+    @Override
+    public String adicionarPlato(Plato p) {
+        platos.add(p);
+        return ""+platos.size();
     }
-
-    
 
 }
